@@ -8,18 +8,27 @@ const User = require('../models/Users');
 router.get('/',  async (req, res)=>{
     try{
         const users = await User.find(); 
-        res.send(users)
+        res.status(200).json(users)
     }catch(e){
         res.status(500).json({message: e.message})
     }
 })
 // get single user
-router.get('/:id', (req, res)=>{
-    res.send("you are getting this id:"+req.params.id)
+router.get('/:id', getUser, (req, res)=>{
+     res.send(res.user.username)
 })
 // create single user
 router.post('/', (req, res)=>{
-    res.send("you are posting to this route")
+    const user = new User({
+        username: req.body.username, 
+        password: req.body.password
+    }); 
+    try{
+        const newUser = user.save(); 
+        res.status(201).json(newUser) 
+    }catch(e){
+        res.status(400).json({message: e.message})
+    }
 })
 // delete single user
 router.delete('/:id', (req, res)=> {
@@ -29,5 +38,20 @@ router.delete('/:id', (req, res)=> {
 router.patch('/:id', (req, res)=>{
     res.send("you are about to update note id: "+req.params.id)
 })
+// maddlewate 
+async function getUser(req, res, next){
+    let user; 
+    try{
+        user = await User.findById(req.params.id); 
+        if(user == null){
+            return res.status(404).json({message: 'Can not find user!'})
+        }
+    }catch(e){
+        return res.status(500).json({message: e.message}); 
+    }
+
+    res.user = urer;
+    next(); 
+}
 //export router
 module.exports = router; 
