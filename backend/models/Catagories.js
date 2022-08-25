@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 
 // make schema 
 const catSchema = mongoose.Schema({
-    name: {type: String}
+    name: {type: String, required: true, unique: true}
 }); 
 
 // exports schema

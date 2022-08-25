@@ -7,27 +7,50 @@ const Catagory = require('../models/Catagories');
 // get all catagories
 router.get('/',  async (req, res)=>{
     try{
-        const cats = await Catagory.find(); 
-        res.send(cats)
+        const catgs = await Catagory.find(); 
+        res.status(200).json(catgs); 
     }catch(e){
         res.status(500).json({message: e.message})
     }
 })
 // get single catagory
-router.get('/:id', (req, res)=>{
-    res.send("you are getting this id:"+req.params.id)
+router.get('/:id', async (req, res)=>{
+    try{
+        const catagory = await Catagory.findById(req.params.id);
+        if(catagory == null) res.status(404).json({message: 'can not find catagory!'})
+        res.status(200).json(catagory)
+    }catch (e){
+        res.status(500).json({message: e.message})
+    }
 })
 // create single catagory
 router.post('/', (req, res)=>{
-    res.send("you are posting to this route")
+    const catagory = new Catagory({name: req.body.name}); 
+    try{
+        catagory.save();
+        res.status(200).json({message: 'catagory created successfully!'})
+    }catch (e){
+        res.status(401).json({message: e.message})
+    }
 })
 // delete single catagory
-router.delete('/:id', (req, res)=> {
-    res.send("you are deleting catagory by id: "+req.params.id)
+router.delete('/:id', async (req, res)=> {
+    try{
+        const catgs = await Catagory.findByIdAndDelete(req.params.id);
+        if(catgs == null) res.send("catagory does not exists!") 
+        res.status(200).json({message: 'catagory deleted successfully!'})
+    }catch (e){
+        res.status(401).json({message: e.message})
+    }
 })
 // update single catagory
-router.patch('/:id', (req, res)=>{
-    res.send("you are about to update catagory id: "+req.params.id)
+router.patch('/:id', async (req, res)=>{
+    try{
+        await Catagory.findByIdAndUpdate(req.params.id, req.body);
+        res.status(200).json({message: 'catagory updatad successfully!'})
+    }catch(e){
+        res.status(404).json({message: e.message})
+    }
 })
 //export router
 module.exports = router; 

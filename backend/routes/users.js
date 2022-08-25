@@ -14,8 +14,14 @@ router.get('/',  async (req, res)=>{
     }
 })
 // get single user
-router.get('/:id', getUser, (req, res)=>{
-     res.send(res.user.username)
+router.get('/:id', async (req, res)=>{
+    try{
+        const user = await User.findById(req.params.id);
+        if(user == null) res.status(404).json({message: 'can not find!'}) 
+        res.status(200).json({user})
+    }catch(e){
+        res.status(500).json({message: e.message}); 
+    } 
 })
 // create single user
 router.post('/', (req, res)=>{
@@ -24,34 +30,30 @@ router.post('/', (req, res)=>{
         password: req.body.password
     }); 
     try{
-        const newUser = user.save(); 
-        res.status(201).json(newUser) 
+        user.save(); 
+        res.status(201).json({message: 'user created successfully!'}) 
     }catch(e){
         res.status(400).json({message: e.message})
     }
 })
 // delete single user
-router.delete('/:id', (req, res)=> {
-    res.send("you are deleting note by id: "+req.params.id)
+router.delete('/:id', async (req, res)=> {
+    try{
+        const user = await User.findByIdAndDelete(req.params.id);
+        res.status(200).json({message: user})
+    }catch(e){
+        res.status(404).json({message: e.message})
+    }
 })
 // update single user
-router.patch('/:id', (req, res)=>{
-    res.send("you are about to update note id: "+req.params.id)
-})
-// maddlewate 
-async function getUser(req, res, next){
-    let user; 
+router.patch('/:id', async (req, res)=>{
     try{
-        user = await User.findById(req.params.id); 
-        if(user == null){
-            return res.status(404).json({message: 'Can not find user!'})
-        }
+        const user = await User.findByIdAndUpdate(req.params.id, req.body);
+        res.status(200).json({message: 'user updatad successfully!'})
     }catch(e){
-        return res.status(500).json({message: e.message}); 
+        res.status(404).json({message: e.message})
     }
-
-    res.user = urer;
-    next(); 
-}
+})
+ 
 //export router
 module.exports = router; 
