@@ -1,13 +1,13 @@
 const express = require("express"); 
 const router = express.Router(); 
-const Note = require('../models/Notes');
+const noteController = require('../controllers/noteController'); 
 
 // set up the routes 
 //
 // get all notes
 router.get('/',  async (req, res)=>{
     try{
-        const notes = await Note.find(); 
+        const notes = await noteController.getAllNotes(); 
         res.send(notes)
     }catch(e){
         res.status(500).json({message: e.message})
@@ -16,7 +16,7 @@ router.get('/',  async (req, res)=>{
 // get single note
 router.get('/:id', async (req, res)=>{
     try{
-        const note = await Note.findById(req.params.id);
+        const note = await noteController.getNote(req.params.id);
         if(note == null) res.status(404).json({message: 'can not find note!'})
         res.status(200).json(note)
     }catch (e){
@@ -24,11 +24,10 @@ router.get('/:id', async (req, res)=>{
     }
 })
 // create single note
-router.post('/', (req, res)=>{
-    const note = new Note(req.body); 
+router.post('/', async (req, res)=>{ 
     try{
-        note.save();
-        res.status(200).json({message: 'note created successfully!'})
+        const newNote = await noteController.createNote(req.body);
+        res.status(200).json({data: newNote, message: 'note created successfully!'})
     }catch (e){
         res.status(401).json({message: e.message})
     }
@@ -36,9 +35,9 @@ router.post('/', (req, res)=>{
 // delete single note
 router.delete('/:id', async (req, res)=> {
     try{
-        const note = await Note.findByIdAndDelete(req.params.id);
+        const note = await noteController.deleteNote(req.params.id);
         if(note == null) res.send("note does not exists!") 
-        res.status(200).json({message: 'note deleted successfully!'})
+        res.status(200).json({data: note, message: 'note deleted successfully!'})
     }catch (e){
         res.status(401).json({message: e.message})
     }
@@ -46,8 +45,8 @@ router.delete('/:id', async (req, res)=> {
 // update single note
 router.patch('/:id', async (req, res)=>{
     try{
-        await Note.findByIdAndUpdate(req.params.id, req.body);
-        res.status(200).json({message: 'note updatad successfully!'})
+        const note = await noteController.updateNote(req.params.id, req.body);
+        res.status(200).json({data: note, message: 'note updatad successfully!'})
     }catch(e){
         res.status(404).json({message: e.message})
     }

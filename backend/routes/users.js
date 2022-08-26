@@ -1,13 +1,13 @@
 const express = require("express"); 
-const router = express.Router(); 
-const User = require('../models/Users');
+const router = express.Router();
+const userController = require("../controllers/userController");
 
 // set up the routes 
 //
 // get all users
 router.get('/',  async (req, res)=>{
     try{
-        const users = await User.find(); 
+        const users = await userController.getAllUser(); 
         res.status(200).json(users)
     }catch(e){
         res.status(500).json({message: e.message})
@@ -16,7 +16,7 @@ router.get('/',  async (req, res)=>{
 // get single user
 router.get('/:id', async (req, res)=>{
     try{
-        const user = await User.findById(req.params.id);
+        const user = await userController.getUser(req.params.id);
         if(user == null) res.status(404).json({message: 'can not find!'}) 
         res.status(200).json({user})
     }catch(e){
@@ -24,14 +24,10 @@ router.get('/:id', async (req, res)=>{
     } 
 })
 // create single user
-router.post('/', (req, res)=>{
-    const user = new User({
-        username: req.body.username, 
-        password: req.body.password
-    }); 
+router.post('/', async (req, res)=>{
     try{
-        user.save(); 
-        res.status(201).json({message: 'user created successfully!'}) 
+        const newUser = await userController.createUser(req.body);  
+        res.status(201).json({data: newUser, message: 'user created successfully!'}) 
     }catch(e){
         res.status(400).json({message: e.message})
     }
@@ -39,8 +35,9 @@ router.post('/', (req, res)=>{
 // delete single user
 router.delete('/:id', async (req, res)=> {
     try{
-        const user = await User.findByIdAndDelete(req.params.id);
-        res.status(200).json({message: user})
+        const user = await userController.deleteUser(req.params.id);
+        if(user == null) res.json({message: 'can not find user!'})
+        res.status(200).json({data: user, message: 'user deleted successfully'})
     }catch(e){
         res.status(404).json({message: e.message})
     }
@@ -48,8 +45,8 @@ router.delete('/:id', async (req, res)=> {
 // update single user
 router.patch('/:id', async (req, res)=>{
     try{
-        const user = await User.findByIdAndUpdate(req.params.id, req.body);
-        res.status(200).json({message: 'user updatad successfully!'})
+        const user = await userController.updateUser(req.params.id, req.body);
+        res.status(200).json({data: user, message: 'user updatad successfully!'})
     }catch(e){
         res.status(404).json({message: e.message})
     }

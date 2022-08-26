@@ -1,0 +1,31 @@
+###user routes 
+
+GET http://localhost:3000/users
+
+###
+
+GET http://localhost:3000/users/63062b1971095aff043d6f3b
+
+###
+
+POST http://localhost:3000/users
+Content-Type: application/json
+
+{
+    "username": "idilis", 
+    "password": "moghbaziconim"
+}
+
+###
+
+DELETE  http://localhost:3000/users/63062b1971095aff043d6f3b
+
+###
+
+PATCH http://localhost:3000/users/63062b1971095aff043d6f3b
+Content-Type: application/json
+
+{
+    "username": "boz", 
+    "password": "moghbaziconim"
+}
