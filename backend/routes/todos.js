@@ -46,7 +46,7 @@ router.delete('/:id', async (req, res)=> {
 router.patch('/:id', async (req, res)=>{
     try{
         const todo = await todoController.updateTodo(req.params.id, req.body);
-        res.status(200).json({data: data, message: 'todo updatad successfully!'})
+        res.status(200).json({data: todo, message: 'todo updatad successfully!'})
     }catch(e){ 
         res.status(404).json({message: e.message})
     }

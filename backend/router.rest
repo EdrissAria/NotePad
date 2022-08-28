@@ -1,31 +1,32 @@
 ###user routes 
 
-GET http://localhost:3000/users
+GET http://localhost:3000/todos
 
 ###
 
-GET http://localhost:3000/users/63062b1971095aff043d6f3b
+GET http://localhost:3000/todos/63078362e14ab0eea946f547
 
 ###
 
-POST http://localhost:3000/users
+POST http://localhost:3000/todos
 Content-Type: application/json
 
 {
-    "username": "idilis", 
-    "password": "moghbaziconim"
+  "user_id": "boz",
+  "completed": false,
+  "catagory_id": "Personal",
+  "created_at": "2022-08-25T14:11:15.932Z"
 }
 
 ###
 
-DELETE  http://localhost:3000/users/63062b1971095aff043d6f3b
+DELETE  http://localhost:3000/todos/63078362e14ab0eea946f547
 
 ###
 
-PATCH http://localhost:3000/users/63062b1971095aff043d6f3b
+PATCH http://localhost:3000/todos/63078362e14ab0eea946f547
 Content-Type: application/json
 
 {
-    "username": "boz", 
-    "password": "moghbaziconim"
+    "todo": "do nothing"
 }

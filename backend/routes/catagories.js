@@ -36,8 +36,10 @@ router.post('/', (req, res)=>{
 router.delete('/:id', async (req, res)=> {
     try{
         const catg = await catController.deleteCatagory(req.params.id);
-        if(catgs == null) res.send("catagory does not exists!") 
-        res.status(200).json({data: catg, message: 'catagory deleted successfully!'})
+        if(catg != null){
+            res.status(200).json({data: catg, message: 'catagory deleted successfully!'})
+        } 
+        res.send("catagory does not exists!") 
     }catch (e){
         res.status(401).json({message: e.message})
     }
