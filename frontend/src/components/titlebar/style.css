@@ -1,0 +1,15 @@
+.add-btn{
+    border: none;
+    border-radius: 3px;
+    color: #fff;
+    padding: 10px 20px;
+    background: transparent linear-gradient(
+          109deg,#659ff7 0%,#2d75d3 100%
+      ) 0% 0% no-repeat padding-box;
+      box-shadow: 0 6px 10px #b9dfff;
+      text-transform: uppercase;
+  }
+  .title{
+    color: rgb(121, 121, 121);
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+  }
