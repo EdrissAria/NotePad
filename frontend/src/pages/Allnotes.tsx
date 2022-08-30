@@ -6,7 +6,7 @@ function Allnotes() {
   return (
     <main>
       <div className="container pt-4">
-      <TitleBar />
+      <TitleBar title="All notes" buttonLabel="new note"/>
       <Searchbar />
       <Card note="about school lldajdljldjljd aldakjdlfjkaldkjflajd la dlkajdflkjaldjflajd
         a dlaj dfljaldjf ad adljaj fdadj al jdflaj jfd jadfflj aljfd aljfda dflaj flad fla

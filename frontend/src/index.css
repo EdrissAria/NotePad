@@ -37,9 +37,6 @@ main{
     width: 100%;
   }
 }
-.active{
-  background-color: red;
-}
 .sidebar-sticky {
   position: relative;
   top: 0;

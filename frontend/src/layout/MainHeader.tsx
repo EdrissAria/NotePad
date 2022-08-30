@@ -1,4 +1,5 @@
 import { Link, Outlet } from 'react-router-dom'
+import DropDown from 'react-bootstrap/Dropdown'
 
 const MainHeader = () => {
     return (
@@ -17,74 +18,53 @@ const MainHeader = () => {
                         >
                             <i className="fas fa-bars"></i>
                         </button>
-                        <a className="navbar-brand" href="#">
+                        <Link className="navbar-brand" to="/notes">
                             <img
                                 src="logo.png"
                                 height="25"
                                 alt="NotePad Logo"
                                 loading="lazy"
                             />
-                        </a>
+                        </Link>
                         <ul className="navbar-nav ms-auto d-flex flex-row">
-                            <li className="nav-item dropdown">
-                                <a
-                                    className="nav-link me-3 me-lg-0 dropdown-toggle hidden-arrow"
-                                    href="#"
-                                    id="navbarDropdownMenuLink"
-                                    role="button"
-                                    data-mdb-toggle="dropdown"
-                                    aria-expanded="false"
+                            <DropDown>
+                                <DropDown.Toggle variant='defualt' id="dropdown_menu"
+                                    className="hidden-arrow border-0"
                                 >
-                                    <i className="fas fa-bell"></i>
-                                    <span className="badge rounded-pill badge-notification bg-danger">1</span>
-                                </a>
-                                <ul
-                                    className="dropdown-menu dropdown-menu-end"
-                                    aria-labelledby="#navbarDropdownMenuLink"
-                                >
-                                    <li>
-                                        <a className="dropdown-item" href="#">Some news</a>
-                                    </li>
-                                    <li>
-                                        <a className="dropdown-item" href="#">Another news</a>
-                                    </li>
-                                    <li>
-                                        <a className="dropdown-item" href="#">Something else here</a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li className="nav-item dropdown">
-                                <a
-                                    className="nav-link dropdown-toggle hidden-arrow d-flex align-items-center"
-                                    href="#"
-                                    id="navbarDropdownMenuLink"
-                                    role="button"
-                                    data-mdb-toggle="dropdown"
-                                    aria-expanded="false"
+                                </DropDown.Toggle>
+                                <DropDown.Menu>
+                                    <DropDown.Item>
+                                        <Link to="/notes" className='text-decoration-none'>Notes</Link>
+                                    </DropDown.Item>
+                                    <DropDown.Divider />
+                                    <DropDown.Item>
+                                        <Link to="/todos" className='text-decoration-none'>Todos</Link>
+                                    </DropDown.Item>
+                                </DropDown.Menu>
+                            </DropDown>
+                            <DropDown>
+                                <DropDown.Toggle
+                                    variant="default"
+                                    id="profile_dropdown"
+                                    className='border-0'
                                 >
                                     <img
-                                        src="../assets/images/logo.png"
+                                        src="logo.png"
                                         className="rounded-circle"
                                         height="22"
                                         alt="Avatar"
                                         loading="lazy"
                                     />
-                                </a>
-                                <ul
-                                    className="dropdown-menu dropdown-menu-end"
-                                    aria-labelledby="#navbarDropdownMenuLink"
-                                >
-                                    <li>
-                                        <a className="dropdown-item" href="#">My profile</a>
-                                    </li>
-                                    <li>
-                                        <a className="dropdown-item" href="#">Settings</a>
-                                    </li>
-                                    <li>
-                                        <a className="dropdown-item" href="#">Logout</a>
-                                    </li>
-                                </ul>
-                            </li>
+                                </DropDown.Toggle>
+                                <DropDown.Menu>
+                                    <DropDown.Item>
+                                        <Link className="text-decoration-none" to="">My profile</Link>
+                                    </DropDown.Item>
+                                    <DropDown.Item>
+                                        <Link className="text-decoration-none" to="">Logout</Link>
+                                    </DropDown.Item>
+                                </DropDown.Menu>
+                            </DropDown>
                         </ul>
                     </div>
                 </nav>
