@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 type paramType = {
   note: String
 }
-function Card({ note }: paramType) {
+function NoteCard({ note }: paramType) {
   return (
     <Link to="/notes/note/23" className=' text-decoration-none'>
       <div className='card border-0 border-rounded-3 shadow-sm p-3 mt-3 bg-white'>
@@ -15,4 +15,4 @@ function Card({ note }: paramType) {
   )
 }
 
-export default Card
+export default NoteCard

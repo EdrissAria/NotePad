@@ -1,0 +1,7 @@
+.todocard{
+    cursor: pointer;
+    transition: 0.4s;
+}
+.todocard:hover{
+    opacity: 0.7;
+}

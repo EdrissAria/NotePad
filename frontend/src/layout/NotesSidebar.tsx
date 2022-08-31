@@ -1,6 +1,7 @@
-import {useState, useTransition} from 'react'
+import {useState } from 'react'
 import { NavLink, Outlet } from 'react-router-dom'
 import NewCatModal from '../components/newCatModal'
+
 function Sidebar() {
     const [show, setShow] = useState(false); 
     const handleShow = ()=> setShow(!show)

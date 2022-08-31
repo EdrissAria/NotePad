@@ -1,5 +1,6 @@
 import Modal from "react-bootstrap/Modal"
 import './style.css'
+
 type paramType = {
     show: boolean,
     handleClose: ()=> void, 

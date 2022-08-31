@@ -1,12 +1,12 @@
 import Searchbar from "../components/searchbar"
-import Card from "../components/card"
+import Card from "../components/noteCard"
 import TitleBar from "../components/titlebar"
 
 function Delnotes() {
   return (
     <main>
       <div className="container pt-4">
-      <TitleBar title="Recently deleted notes" buttonLabel=""/>
+      <TitleBar title="Recently deleted notes" type="none" />
       <Searchbar />
       <Card note="about school lldajdljldjljd aldakjdlfjkaldkjflajd la dlkajdflkjaldjflajd
         a dlaj dfljaldjf ad adljaj fdadj al jdflaj jfd jadfflj aljfd aljfda dflaj flad fla
