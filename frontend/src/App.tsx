@@ -15,12 +15,15 @@ import Alltodos from "./pages/Alltodos"
 import Viewtodo from "./pages/Viewtodo"
 import Deltodos from "./pages/Deltodos"
 import EditTodoCats from "./pages/EditTodoCats"
+import Home from "./pages/Home"
+import Profile from "./pages/Profile"
 
 function App() {
   return (
     <>
     <Routes>
       <Route path="/" element={<MainHeader />}>
+        <Route index element={<Home />} />
         <Route path="notes" element={<NoteSidebar />}>
           <Route index element={<Allnotes />} />
           <Route path=":catg" element={<Allnotes />} />
@@ -38,6 +41,7 @@ function App() {
           <Route path="editTodoCats" element={<EditTodoCats />} />
         </Route>
         <Route path="settings" element={<Setting />} />
+        <Route path="profile" element={<Profile />} />
         <Route path="*" element={<Notfound />} />
       </Route>
     </Routes>

@@ -18,7 +18,7 @@ const MainHeader = () => {
                         >
                             <i className="fas fa-bars"></i>
                         </button>
-                        <Link className="navbar-brand" to="/notes">
+                        <Link className="navbar-brand" to="/">
                             <img
                                 src="logo.png"
                                 height="25"
@@ -58,7 +58,7 @@ const MainHeader = () => {
                                 </DropDown.Toggle>
                                 <DropDown.Menu>
                                     <DropDown.Item>
-                                        <Link className="text-decoration-none" to="">My profile</Link>
+                                        <Link className="text-decoration-none" to="profile">My profile</Link>
                                     </DropDown.Item>
                                     <DropDown.Item>
                                         <Link className="text-decoration-none" to="">Logout</Link>

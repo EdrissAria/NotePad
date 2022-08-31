@@ -1,8 +1,12 @@
-import React from 'react'
+import TitleBar from "../components/titlebar"
 
 function Setting() {
   return (
-    <div>Setting</div>
+    <div className="container" style={{marginTop: '60px'}}>
+      <div className="d-flex justify-content-center">
+        <TitleBar title="Settings" buttonLabel="" />
+      </div>
+    </div>
   )
 }
 
