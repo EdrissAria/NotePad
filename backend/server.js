@@ -26,11 +26,13 @@ db.once('open', ()=> console.log('database connected'))
 const notesRoutes = require('./routes/notes')
 const todosRoutes = require('./routes/todos')
 const usersRoutes = require('./routes/users')
-const catagoriesRoutes = require('./routes/catagories')
+const noteCatagoriesRoutes = require('./routes/noteCatagories')
+const todoCatagoriesRoutes = require('./routes/todoCatagories')
 app.use('/notes', notesRoutes); 
 app.use('/todos', todosRoutes);
 app.use('/users', usersRoutes); 
-app.use('/catagories', catagoriesRoutes); 
+app.use('/noteCatagories', noteCatagoriesRoutes); 
+app.use('/todoCatagories', todoCatagoriesRoutes); 
 
 // listen on port 3000
 app.listen(3000, ()=>{

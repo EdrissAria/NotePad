@@ -1,6 +1,6 @@
 const express = require("express"); 
 const router = express.Router(); 
-const catController = require('../controllers/catagoryController')
+const catController = require('../controllers/noteCatagoryController')
 
 // set up the routes 
 //

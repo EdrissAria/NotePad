@@ -1,4 +1,4 @@
-const catModel = require("../models/Catagories"); 
+const catModel = require("../models/NoteCatagories"); 
 
 // get all
 exports.getAllCatagories = async ()=>{
