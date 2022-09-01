@@ -21,6 +21,7 @@ function Viewnote() {
         <div className="mt-4">
           <CkEditor />
         </div>
+        <button className='btn mt-3 btn-success rounded-3 px-4 py-2 shadow-sm'>Update</button>
       </div>
     </main>
   )

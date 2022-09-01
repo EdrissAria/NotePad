@@ -8,7 +8,7 @@ type paramType = {
 function TodoCard({ todo, check }: paramType) {
     return (
         <div className='todocard border-rounded-3 shadow-sm p-2 mt-3 bg-white d-flex justify-content-start align-items-center'>
-            {check?<input type="checkbox" className='form-check-input m-3' />:null}
+            {check?<input type="checkbox" className='form-check-input m-3 fs-4 rounded-4' />:null}
             <Link to="/todos/todo/23" className='text-decoration-none d-flex align-items-center w-100'>
                 <i className='fas fa-heart text-danger m-2'></i>
                 <span className='text-black'>{todo.length > 100 ? todo.slice(0, 100) + "..." : todo}</span>

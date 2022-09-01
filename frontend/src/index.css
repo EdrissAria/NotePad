@@ -57,6 +57,9 @@ main{
   height: 8px;
   background-color: rgb(245, 245, 245);
 }
+.ck-editor__editable_inline{
+  min-height: 400px;
+}
 
 
  
