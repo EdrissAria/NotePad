@@ -55,7 +55,7 @@ function Sidebar() {
                         >
                         <div className="seperator"></div>
                         <NavLink to="/settings" className="list-group-item list-group-item-action py-2 ripple"
-                        ><i className="fas fa-circle fa-fw me-3"></i><span>Settings</span></NavLink
+                        ><i className="fas fa-gear fa-fw me-3"></i><span>Settings</span></NavLink
                         >
                     </div>
                 </div>
