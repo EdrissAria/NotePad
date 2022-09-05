@@ -17,10 +17,12 @@ import Deltodos from "./pages/Deltodos"
 import EditTodoCats from "./pages/EditTodoCats"
 import Home from "./pages/Home"
 import Profile from "./pages/Profile"
+import Login from "./pages/Login"
+import SignUp from "./pages/SignUp"
 
 function App() {
   return (
-    <>
+    <div className="root">
     <Routes>
       <Route path="/" element={<MainHeader />}>
         <Route index element={<Home />} />
@@ -42,10 +44,12 @@ function App() {
         </Route>
         <Route path="settings" element={<Setting />} />
         <Route path="profile" element={<Profile />} />
+        <Route path="login" element={<Login />} />
+        <Route path="signup" element={<SignUp />} />
         <Route path="*" element={<Notfound />} />
       </Route>
     </Routes>
-    </>
+    </div>
   )
 }
 

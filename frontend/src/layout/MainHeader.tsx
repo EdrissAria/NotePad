@@ -8,7 +8,7 @@ const MainHeader = () => {
                 <nav id="main-navbar" className="navbar navbar-expand-lg navbar-light bg-white fixed-top">
                     <div className="container-fluid">
                         <button
-                            className="navbar-toggler"
+                            className="navbar-toggler me-3"
                             type="button"
                             data-mdb-toggle="collapse"
                             data-mdb-target="#sidebarMenu"
@@ -34,11 +34,11 @@ const MainHeader = () => {
                                 </DropDown.Toggle>
                                 <DropDown.Menu>
                                     <DropDown.Item>
-                                        <Link to="/notes" className='text-decoration-none'>Notes</Link>
+                                        <Link to="/notes" className='text-decoration-none text-black d-block'>Notes</Link>
                                     </DropDown.Item>
                                     <DropDown.Divider />
                                     <DropDown.Item>
-                                        <Link to="/todos" className='text-decoration-none'>Todos</Link>
+                                        <Link to="/todos" className='text-decoration-none text-black d-block'>Todos</Link>
                                     </DropDown.Item>
                                 </DropDown.Menu>
                             </DropDown>
@@ -48,20 +48,14 @@ const MainHeader = () => {
                                     id="profile_dropdown"
                                     className='border-0'
                                 >
-                                    <img
-                                        src="logo.png"
-                                        className="rounded-circle"
-                                        height="22"
-                                        alt="Avatar"
-                                        loading="lazy"
-                                    />
+                                    <i className="fas fa-user"></i>
                                 </DropDown.Toggle>
                                 <DropDown.Menu>
                                     <DropDown.Item>
-                                        <Link className="text-decoration-none" to="profile">My profile</Link>
+                                        <Link className="text-decoration-none text-black d-block" to="profile">My profile</Link>
                                     </DropDown.Item>
                                     <DropDown.Item>
-                                        <Link className="text-decoration-none" to="">Logout</Link>
+                                        <Link className="text-decoration-none text-black d-block" to="">Logout</Link>
                                     </DropDown.Item>
                                 </DropDown.Menu>
                             </DropDown>
