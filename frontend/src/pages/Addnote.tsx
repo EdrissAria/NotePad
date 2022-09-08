@@ -1,5 +1,7 @@
 import CkEditor from '../components/ckeditor'
+
 const now = new Date().toDateString(); 
+
 function Addnote() {
   return (
     <main>

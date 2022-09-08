@@ -18,11 +18,11 @@ function TodoSidbar() {
                             className="list-group-item list-group-item-action py-2 ripple"
                             aria-current="true"
                         >
-                            <i className="fas fa-clipboard-list fa-fw me-3"></i>
+                            <i className="fas fa-clipboard-check fa-fw me-3"></i>
                             <span>All To-dos</span><span className="float-end text-black-50">0</span>
                         </NavLink>
                         <NavLink to="/todos/deletedTodos" className="list-group-item list-group-item-action py-2 ripple last-item"
-                        ><i className="fas fa-trash fa-fw me-3"></i><span>Recently deleted</span><span className="float-end text-black-50">0</span></NavLink
+                        ><i className="fas fa-trash-can fa-fw me-3"></i><span>Recently deleted</span><span className="float-end text-black-50">0</span></NavLink
                         >
                         <div className="seperator"></div>
                         <div className="catagory-header d-flex justify-content-between align-items-center my-2">
@@ -52,7 +52,7 @@ function TodoSidbar() {
                         >
                         <div className="seperator"></div>
                         <NavLink to="/settings" className="list-group-item list-group-item-action py-2 ripple"
-                        ><i className="fas fa-circle fa-fw me-3"></i><span>Settings</span></NavLink
+                        ><i className="fas fa-gear fa-fw me-3"></i><span>Settings</span></NavLink
                         >
                     </div>
                 </div>

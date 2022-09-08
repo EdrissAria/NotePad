@@ -30,7 +30,7 @@ function Viewtodo() {
             </div>
           </div>
           <div className='d-flex justify-content-start align-items-center border-bottom mt-2'>
-            <i className='fas fa-bell m-3 fs-4'></i>
+            <i className='fas fa-exclamation m-3 fs-4'></i>
             <div className='text-decoration-none d-flex align-items-center w-100'>
               <span>Mark as important</span>
             </div>
@@ -39,7 +39,7 @@ function Viewtodo() {
             </div>
           </div>
           <div className='d-flex justify-content-start align-items-center border-bottom mt-2'>
-            <i className='fas fa-bell m-3 fs-4'></i>
+            <i className='fa-solid fa-chart-bar m-3 fs-4'></i>
             <div className='text-decoration-none d-flex align-items-center w-100'>
               <input type="text" placeholder='Remarks' className='w-100 border-0 px-2 py-2' style={{ outline: 'none' }} />
             </div>

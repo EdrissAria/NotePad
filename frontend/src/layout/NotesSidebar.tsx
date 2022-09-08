@@ -1,15 +1,17 @@
 import {useState } from 'react'
-import { NavLink, Outlet } from 'react-router-dom'
+import { NavLink, Outlet, useOutletContext} from 'react-router-dom'
 import NewCatModal from '../components/newCatModal'
 
 function Sidebar() {
+    const outLetData = useOutletContext(); 
     const [show, setShow] = useState(false); 
     const handleShow = ()=> setShow(!show)
     const handleClose = ()=> setShow(!show)
+    console.log('outlet: ', outLetData)
     return (
         <>
             <NewCatModal show={show} handleClose={handleClose}/>
-            <nav id="sidebarMenu" className="collapse d-lg-block sidebar collapse bg-white overflow-auto">
+            <nav id="sidebarMenu" className="collapse d-lg-block sidebar bg-white overflow-auto">
                 <div className="position-sticky">
                     <div className="list-group list-group-flush mx-3 mt-4">
                         <NavLink
@@ -25,7 +27,7 @@ function Sidebar() {
                             <i className="fas fa-heart fa-fw me-3"></i><span>My favourites</span><span className="float-end text-black-50">0</span>
                         </NavLink>
                         <NavLink to="deletedNotes" className="list-group-item list-group-item-action py-2 ripple last-item"
-                        ><i className="fas fa-trash fa-fw me-3"></i><span>Recently deleted</span><span className="float-end text-black-50">0</span></NavLink
+                        ><i className="fas fa-trash-can fa-fw me-3"></i><span>Recently deleted</span><span className="float-end text-black-50">0</span></NavLink
                         >
                         <div className="seperator"></div>
                         <div className="catagory-header d-flex justify-content-between align-items-center my-2">

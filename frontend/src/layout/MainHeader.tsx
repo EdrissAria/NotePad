@@ -1,7 +1,11 @@
+import {useState} from 'react'
 import { Link, Outlet } from 'react-router-dom'
 import DropDown from 'react-bootstrap/Dropdown'
+import { useLocation } from 'react-router-dom'
 
 const MainHeader = () => {
+    const location = useLocation(); 
+    const [open, setOpen] = useState(false)
     return (
         <>
             <header>
@@ -9,18 +13,14 @@ const MainHeader = () => {
                     <div className="container-fluid">
                         <button
                             className="navbar-toggler me-3"
-                            type="button"
-                            data-mdb-toggle="collapse"
-                            data-mdb-target="#sidebarMenu"
-                            aria-controls="sidebarMenu"
-                            aria-expanded="false"
-                            aria-label="Toggle navigation"
+                            type="button" 
+                            onClick={()=> setOpen(!open)}
                         >
                             <i className="fas fa-bars"></i>
                         </button>
                         <Link className="navbar-brand" to="/">
                             <img
-                                src="logo.png"
+                                src="logo.jpeg"
                                 height="25"
                                 alt="NotePad Logo"
                                 loading="lazy"
@@ -29,8 +29,9 @@ const MainHeader = () => {
                         <ul className="navbar-nav ms-auto d-flex flex-row">
                             <DropDown>
                                 <DropDown.Toggle variant='defualt' id="dropdown_menu"
-                                    className="hidden-arrow border-0"
+                                    className="hidden-arrow border-0 fs-5"
                                 >
+                                    {location.pathname.includes('notes') && 'Notes' || location.pathname.includes('todos') && 'Todos' || 'Home'}
                                 </DropDown.Toggle>
                                 <DropDown.Menu>
                                     <DropDown.Item>
@@ -63,7 +64,7 @@ const MainHeader = () => {
                     </div>
                 </nav>
             </header>
-            <Outlet />
+            <Outlet context={{open}}/>
         </>
     )
 }
