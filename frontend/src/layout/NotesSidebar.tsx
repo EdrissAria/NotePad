@@ -7,13 +7,15 @@ function Sidebar() {
     const [show, setShow] = useState(false); 
     const handleShow = ()=> setShow(!show)
     const handleClose = ()=> setShow(!show)
-    console.log('outlet: ', outLetData)
     return (
         <>
             <NewCatModal show={show} handleClose={handleClose}/>
             <nav id="sidebarMenu" className="collapse d-lg-block sidebar bg-white overflow-auto">
                 <div className="position-sticky">
                     <div className="list-group list-group-flush mx-3 mt-4">
+                        <p>
+                            {Object.apply(outLetData).open && 'someting'}
+                        </p>
                         <NavLink
                             to="/notes"
                             end

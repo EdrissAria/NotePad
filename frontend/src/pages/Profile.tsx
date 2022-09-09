@@ -4,7 +4,7 @@ function Profile() {
     <div className="container" style={{ marginTop: '60px' }}>
       <div className="d-flex justify-content-center flex-column align-items-center">
         <img
-          src="logo.png"
+          src="logo.jpeg"
           className="rounded-circle text-center mt-4"
           height="200"
           width="200"
