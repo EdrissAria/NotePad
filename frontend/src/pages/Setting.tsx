@@ -1,6 +1,19 @@
+import { useState } from "react"
 import TitleBar from "../components/titlebar"
+import {useDispatch} from "react-redux"
+import {changeTheme} from "../slices.js/DarkMode"
+import {useSelector} from 'react-redux'
 
 function Setting() {
+  const [darkMode, setDarkMode] = useState(false);
+  const theme = useDispatch(); 
+  const darkTheme = useSelector((state: any)=> state.theme.value);
+
+  const changeThemeColor = () => {
+    setDarkMode(!darkMode); 
+    theme(changeTheme(darkMode))
+  } 
+
   return (
     <div className="container" style={{marginTop: '60px'}}>
       <div className="d-flex justify-content-center">
@@ -11,7 +24,7 @@ function Setting() {
           Dark Mode
           </label>
             <div className='form-check form-switch'>
-              <input type="checkbox" id="dark-mode" className='form-check-input m-3 fs-4' />
+              <input type="checkbox" id="dark-mode" onChange={changeThemeColor} checked={darkTheme} className='form-check-input m-3 fs-4' />
             </div>
       </div>
     </div>

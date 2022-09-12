@@ -11,6 +11,7 @@
   "dependencies": {
     "@ckeditor/ckeditor5-build-classic": "^35.0.1",
     "@ckeditor/ckeditor5-react": "^5.0.2",
+    "@reduxjs/toolkit": "^1.8.5",
     "axios": "^0.27.2",
     "bootstrap": "^5.2.0",
     "formik": "^2.2.9",
@@ -18,8 +19,11 @@
     "react-bootstrap": "^2.5.0",
     "react-dom": "^18.2.0",
     "react-query": "^3.39.2",
+    "react-redux": "^8.0.2",
     "react-router": "^6.3.0",
     "react-router-dom": "^6.3.0",
+    "redux": "^4.2.0",
+    "redux-thunk": "^2.4.1",
     "yup": "^0.32.11"
   },
   "devDependencies": {

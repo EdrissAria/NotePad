@@ -19,10 +19,14 @@ import Home from "./pages/Home"
 import Profile from "./pages/Profile"
 import Login from "./pages/Login"
 import SignUp from "./pages/SignUp"
+// redux 
+import {useSelector} from 'react-redux'
 
 function App() {
+  const theme = useSelector(((state: any) => state.theme.value))
+  console.log('theme: ', theme)
   return (
-    <div className="root">
+    <div className={`${theme?'dark':'light'}`}>
     <Routes>
       <Route path="/" element={<MainHeader />}>
         <Route index element={<Home />} />

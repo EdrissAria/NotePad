@@ -18,14 +18,6 @@ const MainHeader = () => {
                         >
                             <i className="fas fa-bars"></i>
                         </button>
-                        <Link className="navbar-brand" to="/">
-                            <img
-                                src="logo.jpeg"
-                                height="25"
-                                alt="NotePad Logo"
-                                loading="lazy"
-                            />
-                        </Link>
                         <ul className="navbar-nav ms-auto d-flex flex-row">
                             <DropDown>
                                 <DropDown.Toggle variant='defualt' id="dropdown_menu"
@@ -64,7 +56,7 @@ const MainHeader = () => {
                     </div>
                 </nav>
             </header>
-            <Outlet context={{open}}/>
+            <Outlet context={{open, setOpen}}/>
         </>
     )
 }
