@@ -1,16 +1,14 @@
 :root {
-    font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
-    font-size: 16px;
-    font-weight: 400;
-    color-scheme: light dark;
-    font-synthesis: none;
-    text-rendering: optimizeLegibility;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    -webkit-text-size-adjust: 100%;
+   --dark: rgb(49, 49, 49);
+   --black: rgb(24, 24, 24);
+   --blue: rgb(56, 135, 255);
+   --light: #fbfbfb;
+   --darkgray: rgb(128, 128, 128);
   }
   body {
-    background-color: #fbfbfb;
+    margin: 0; 
+    padding: 0;
+    background-color: var(--light);
   }
   @media (min-width: 991.98px) {
     main {
@@ -45,16 +43,13 @@
     overflow-y: auto !important; /* Scrollable contents if viewport is shorter than content. */
   }
   
-  #main-navbar{
-    border: 1px solid rgb(245, 245, 245)
-  }
   .last-item{
     border: none !important;
   }
   .seperator{
     width: 100%;
     height: 8px;
-    background-color: rgb(245, 245, 245);
+    background-color: var(--light)
   }
   .ck-editor__editable_inline{
     min-height: 400px;
@@ -67,47 +62,102 @@
     background-color: transparent;
   }
   ::-webkit-scrollbar-thumb{
-    background-color: #3c7aff;
+    background-color: var(--blue);
     border-radius: 5px;
     margin-right: 1rem;
   }
   ::-webkit-scrollbar-thumb:hover{
-    background-color: #9b9b9b;
+    background-color: var(--dark)
   }
   /* dark mode */
-  
-  .dark .sidebar{
-    background-color: black !important;
+  .dark{
+    width: 100%;
+    height: 100%;
   }
-  .dark .sidebar .list i, span{
-    color:rgb(245, 245, 245) !important;
+  .dark .sidebar{
+    background-color: var(--black) !important;
+  }
+  .dark .sidebar .list i, span, .dark .sidebar i{
+    color: var(--light) !important;
   }
   .dark .sidebar .list{
-    background-color: #000000 !important;
+    background-color: var(--black) !important;
   }
   .dark .catagory-header h6{
-    color:rgb(245, 245, 245) !important
+    color: var(--light) !important
   }
   .dark .catagory-header a{
     background-color: transparent !important
   }
   .dark .sidebar .list a{
-    background-color: rgb(49, 49, 49);
+    background-color: var(--dark)
   }
   .dark .sidebar .seperator{
-    background-color: rgb(26, 26, 26);
+    background-color: var(--light) !important;
   }
   .dark .sidebar .active{
-    background-color: rgb(57, 150, 236) !important;
+    background-color: var(--blue) !important;
   }
   .dark .sidebar button{
-    background-color: rgb(49, 49, 49) !important;
+    background-color: var(--dark) !important;
+  }
+  /*----------------------- main header ----------------------------*/
+  .dark .navbar{
+    background-color: var(--black) !important;
+  }
+  .dark .navbar i, button{
+    color: var(--light);
+  }
+  .dark .navbar a{
+    color: var(--light) !important;
+  }
+  .dark .navbar div{
+    background-color: var(--black) !important;
+  }
+  /*----------------------- main ----------------------------*/
+  .dark{
+    background-color: var(--dark);
+  }
+  .dark p{
+    color: var(--light)
+  }
+  .dark .home-card{
+    background-color: var(--darkgray) !important;
+  }
+  .dark .card, .catagory-card ,.todocard{
+    background-color: var(--darkgray) !important;
+  }
+  .modal .modal-header, .modal-body, .new-input{
+    background-color: var(--dark);
+  }
+  .modal button, i, .modal-title, label{
+    color: var(--darkgray);
+  }
+  .dark .card P, .todocard span{
+    color: var(--light) !important;
+  }
+  .dark .add-btn{
+    box-shadow: none;
+  }
+  .dark .view-todo, .view-todo input{
+    background-color: var(--darkgray) !important;
+  }
+  .dark .view-todo i, input{
+    color: var(--light) !important;
+  }
+  .dark .login-card{
+    background-color: var(--dark) !important;
   }
 
   /* light mode */
   .light .sidebar .list span, h3, h6{
-    color:rgb(49, 49, 49) !important; 
+    color: var(--dark) !important; 
   }
   .light .sidebar .active span{
-    color: #fbfbfb !important;
+    color: var(--light) !important;
+  }
+
+  /* light mode and dark mode */
+  .sidebar .edit .active{
+    background-color: transparent;
   }

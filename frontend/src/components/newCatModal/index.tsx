@@ -12,12 +12,13 @@ function NewCatModal({show, handleClose}: paramType) {
         onHide={handleClose}
         backdrop="static"
         keyboard={false}
+        className="modal"
     >
-        <Modal.Header className="border-0">
+        <Modal.Header className="modal-header border-0">
             <Modal.Title>New note catagory</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-            <div className="d-flex align-items-center">
+            <div className="modal-body d-flex align-items-center">
             <i className="fas fa-envelope m-2 fs-4"></i>
             <input type="text" className="new-input" placeholder="Name"/>
             </div>

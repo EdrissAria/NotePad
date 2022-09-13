@@ -17,7 +17,7 @@ function Login() {
     }
     return (
         <div className='container d-flex justify-content-center align-items-center mt-5'>
-            <div className='w-50 h-50 bg-white mt-5 p-3 rounded shadow-lg'>
+            <div className='login-card w-50 h-50 bg-white mt-5 p-3 rounded shadow-lg'>
                 <p className='fs-1 text-black-50 text-center'>Login</p>
                 <Formik
                     initialValues={initailValues}

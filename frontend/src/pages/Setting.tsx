@@ -5,13 +5,12 @@ import {changeTheme} from "../slices.js/DarkMode"
 import {useSelector} from 'react-redux'
 
 function Setting() {
-  const [darkMode, setDarkMode] = useState(false);
   const theme = useDispatch(); 
   const darkTheme = useSelector((state: any)=> state.theme.value);
 
   const changeThemeColor = () => {
-    setDarkMode(!darkMode); 
-    theme(changeTheme(darkMode))
+    theme(changeTheme())
+    localStorage.setItem('darkMode', darkTheme); 
   } 
 
   return (

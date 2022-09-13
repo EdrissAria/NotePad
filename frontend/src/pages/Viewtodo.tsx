@@ -16,7 +16,7 @@ function Viewtodo() {
             </select>
           </div>
         </div>
-        <div className='border-rounded-3 shadow-sm p-2 pb-5 mt-3 bg-white'>
+        <div className='view-todo border-rounded-3 shadow-sm p-2 pb-5 mt-3 bg-white'>
           <div className='d-flex justify-content-start align-items-center border-bottom mt-2'>
             <input type="checkbox" className='form-check-input m-3 fs-4 rounded-4' />
             <div className='text-decoration-none d-flex align-items-center w-100'>
