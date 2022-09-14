@@ -2,23 +2,21 @@ import { useState } from "react"
 import TitleBar from "../components/titlebar"
 import {useDispatch} from "react-redux"
 import {changeTheme} from "../slices.js/DarkMode"
-import {useSelector} from 'react-redux'
+
 
 function Setting() {
   const theme = useDispatch(); 
-  const darkTheme = useSelector((state: any)=> state.theme.value);
-
   const changeThemeColor = () => {
-    theme(changeTheme())
-    localStorage.setItem('darkMode', darkTheme); 
-  } 
+    theme(changeTheme()) 
+  }
+  const darkTheme = JSON.parse(localStorage.getItem('darkMode')); 
 
   return (
     <div className="container" style={{marginTop: '60px'}}>
       <div className="d-flex justify-content-center">
         <TitleBar title="Settings" type="none" />
       </div>
-      <div className="mt-3 shadow-sm p-4 bg-white w-100 rounded d-flex justify-content-between align-items-center">
+      <div className="settings mt-3 shadow-sm p-4 bg-white w-100 rounded d-flex justify-content-between align-items-center">
         <label htmlFor="dark-mode" className="text-black-50 fs-2 ">
           Dark Mode
           </label>

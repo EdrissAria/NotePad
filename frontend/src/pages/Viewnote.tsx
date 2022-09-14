@@ -3,10 +3,10 @@ const now = new Date().toDateString();
 function Viewnote() {
   return (
     <main>
-      <div className="container pt-4">
-        <div className=" d-flex justify-content-between align-items-center">
+      <div className="container pt-4 view-note">
+        <div className="view-titlebar d-flex justify-content-between align-items-center">
           <div className='d-flex justify-content-start align-items-center'>
-            <i className="fas fa-envelope fs-4 m-2"></i>
+            <i className="fas fa-clipboard fs-4 m-2"></i>
             <select name="" id="" className='form-select form-select-sm border-0'>
               <option selected>No catagory</option>
               <option value="work">work</option>

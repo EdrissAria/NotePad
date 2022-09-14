@@ -4,7 +4,7 @@ function Viewtodo() {
   return (
     <main>
       <div className="container pt-4">
-        <div className=" d-flex justify-content-between align-items-center">
+        <div className="view-titlebar d-flex justify-content-between align-items-center">
           <div className='d-flex justify-content-start align-items-center'>
             <i className="fas fa-envelope fs-4 m-2"></i>
             <select name="" id="" className='form-select form-select-sm border-0'>

@@ -3,7 +3,7 @@
    --black: rgb(24, 24, 24);
    --blue: rgb(56, 135, 255);
    --light: #fbfbfb;
-   --darkgray: rgb(128, 128, 128);
+   --darkgray: rgb(112, 112, 112);
   }
   body {
     margin: 0; 
@@ -18,20 +18,31 @@
   main{
     margin-top: 58px;
   }
+  .navbar{
+    border-bottom: 1px solid #eeeeee;
+  }
+  .dark .navbar{
+    border-bottom: 1px solid var(--darkgray);
+  }
   /* Sidebar */
   .sidebar {
     position: fixed;
     top: 0;
     bottom: 0;
     left: 0;
+    padding-top: 70px;
     box-shadow: 0 2px 5px 0 rgb(0 0 0 / 5%), 0 2px 10px 0 rgb(0 0 0 / 5%);
     width: 250px;
-    z-index: 9900;
+    z-index: 1000;
   }
-  
   @media (max-width: 991.98px) {
     .sidebar {
       width: 50%;
+    }
+  }
+  @media (max-width: 425px) {
+    .sidebar {
+      width: 70%;
     }
   }
   .sidebar-sticky {
@@ -70,32 +81,30 @@
     background-color: var(--dark)
   }
   /* dark mode */
-  .dark{
-    width: 100%;
-    height: 100%;
-  }
   .dark .sidebar{
     background-color: var(--black) !important;
+    border-right: 1px solid rgba(224, 224, 224, 0.164);
   }
-  .dark .sidebar .list i, span, .dark .sidebar i{
-    color: var(--light) !important;
+  .dark .sidebar .list i,
+  .dark .sidebar span{
+    color: var(--light);
   }
   .dark .sidebar .list{
-    background-color: var(--black) !important;
+    background-color: var(--black);
   }
   .dark .catagory-header h6{
-    color: var(--light) !important
+    color: var(--light) !important;
   }
   .dark .catagory-header a{
-    background-color: transparent !important
+    background-color: transparent !important;
   }
   .dark .sidebar .list a{
-    background-color: var(--dark)
+    background-color: var(--dark); 
   }
   .dark .sidebar .seperator{
-    background-color: var(--light) !important;
+    background-color: var(--light);
   }
-  .dark .sidebar .active{
+  .dark .sidebar .active:not(.edit){
     background-color: var(--blue) !important;
   }
   .dark .sidebar button{
@@ -105,59 +114,93 @@
   .dark .navbar{
     background-color: var(--black) !important;
   }
-  .dark .navbar i, button{
+  .dark .navbar i,
+  .dark .navbar button{
     color: var(--light);
   }
   .dark .navbar a{
     color: var(--light) !important;
   }
   .dark .navbar div{
-    background-color: var(--black) !important;
+    background-color: var(--black);
   }
   /*----------------------- main ----------------------------*/
   .dark{
     background-color: var(--dark);
   }
   .dark p{
-    color: var(--light)
+    color: var(--light) !important;
   }
   .dark .home-card{
     background-color: var(--darkgray) !important;
   }
-  .dark .card, .catagory-card ,.todocard{
+  .dark .card,
+  .dark .catagory-card,
+  .dark .todocard{
     background-color: var(--darkgray) !important;
   }
-  .modal .modal-header, .modal-body, .new-input{
-    background-color: var(--dark);
+  .dark .todocard span{
+    color: var(--light) !important;
   }
-  .modal button, i, .modal-title, label{
+  .modal{
+    background-color: transparent;
+  }
+  .dark .modal-content,
+  .dark .new-input{
+    background-color: var(--dark) !important;
+  }
+  .dark button,
+  .dark i,
+  .dark .modal-title,
+  .dark label{
     color: var(--darkgray);
   }
-  .dark .card P, .todocard span{
-    color: var(--light) !important;
+  .dark .modal-body input[type="input"]{
+    color: var(--light)
+  }
+  .dark .ck{
+    background-color:var(--darkgray) !important;
+  }
+  .dark .card p,
+  .dark .todocard span{
+    color: var(--light);
   }
   .dark .add-btn{
     box-shadow: none;
   }
-  .dark .view-todo, .view-todo input{
+  .dark .view-titlebar i,
+  .dark .view-titlebar p{
+    color: var(--light) !important;
+  } 
+  .dark .view-todo,
+  .dark .view-todo input[type="text"],
+  .dark .view-todo input[type="datetime-local"]{
     background-color: var(--darkgray) !important;
   }
-  .dark .view-todo i, input{
+  .dark .view-todo i,
+  .dark .view-todo input,
+  .dark .view-todo input::placeholder,
+  .dark .view-todo button,
+  .dark .view-todo span,
+  .dark .view-note button, 
+  .dark .view-note i,
+  .dark .view-note p{
+    color: var(--light);
+  }
+  .dark .settings{
+    background-color: var(--darkgray) !important;
+  }
+  .dark .settings label{
     color: var(--light) !important;
   }
-  .dark .login-card{
-    background-color: var(--dark) !important;
+  /*----------------------- login signup ----------------------------*/
+  .dark .login-card,
+  .dark .signup-card{
+    background-color: var(--darkgray) !important;
+  }
+  .dark .login-card i,
+  .dark .signup-card i{
+    color: var(--light);
   }
 
-  /* light mode */
-  .light .sidebar .list span, h3, h6{
-    color: var(--dark) !important; 
-  }
-  .light .sidebar .active span{
-    color: var(--light) !important;
-  }
-
-  /* light mode and dark mode */
-  .sidebar .edit .active{
-    background-color: transparent;
-  }
+ 

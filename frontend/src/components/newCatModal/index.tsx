@@ -1,18 +1,21 @@
 import Modal from "react-bootstrap/Modal"
 import './style.css'
+import {useSelector} from 'react-redux'
+
 
 type paramType = {
     show: boolean,
     handleClose: ()=> void, 
 }
 function NewCatModal({show, handleClose}: paramType) {
+    useSelector((state: any)=> state.theme.value)
   return (
     <Modal 
         show={show}
         onHide={handleClose}
         backdrop="static"
         keyboard={false}
-        className="modal"
+        className={`${JSON.parse(localStorage.getItem('darkMode'))?'dark':'light'}`}
     >
         <Modal.Header className="modal-header border-0">
             <Modal.Title>New note catagory</Modal.Title>

@@ -5,7 +5,7 @@ export const darkModeSlice = createSlice({
     initialState: {value: false},
     reducers: {
         changeTheme: (state) => {
-            state.value = !state.value
+            localStorage.setItem('darkMode', JSON.stringify(state.value = !state.value));
         }
     }
 })

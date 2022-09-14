@@ -1,5 +1,6 @@
 import Modal from 'react-bootstrap/Modal'
 import './style.css'
+import {useSelector} from 'react-redux'
 
 type paramType = {
   handleClose: () => void,
@@ -12,6 +13,7 @@ function NewTodoModal({ show, handleClose }: paramType) {
       onHide={handleClose}
       backdrop="static"
       keyboard={false}
+      className={`${JSON.parse(localStorage.getItem('darkMode'))?'dark':'light'}`}
     >
       <Modal.Header className="border-0">
         <Modal.Title>New todo</Modal.Title>

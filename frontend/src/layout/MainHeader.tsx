@@ -1,29 +1,42 @@
-import {useState} from 'react'
+import { useState } from 'react'
 import { Link, Outlet } from 'react-router-dom'
 import DropDown from 'react-bootstrap/Dropdown'
 import { useLocation } from 'react-router-dom'
 
 const MainHeader = () => {
-    const location = useLocation(); 
+    const location = useLocation();
     const [open, setOpen] = useState(false)
     return (
         <>
             <header>
                 <nav id="main-navbar" className="navbar navbar-expand-lg navbar-light bg-white fixed-top">
                     <div className="container-fluid">
-                        <button
-                            className="navbar-toggler me-3"
-                            type="button" 
-                            onClick={()=> setOpen(!open)}
-                        >
-                            <i className="fas fa-bars"></i>
-                        </button>
+                        {
+                            location.pathname.includes('notes') && <button
+                                className="navbar-toggler me-3"
+                                type="button"
+                                onClick={() => setOpen(!open)}
+                            >
+                                {open?<i className="fas fa-close"></i>:<i className="fas fa-bars"></i>}
+                            </button> || location.pathname.includes('todos') && <button
+                                className="navbar-toggler me-3"
+                                type="button"
+                                onClick={() => setOpen(!open)}
+                            >
+                                {open?<i className="fas fa-close"></i>:<i className="fas fa-bars"></i>}
+                            </button> || ''
+                        }
+                        <div className='d-flex align-items-center'>
+                            <Link className="navbar-brand" to="/">
+                                <h3 className='m-0 text-secondary'>NotePad</h3>
+                            </Link>
+                        </div>
                         <ul className="navbar-nav ms-auto d-flex flex-row">
                             <DropDown>
                                 <DropDown.Toggle variant='defualt' id="dropdown_menu"
                                     className="hidden-arrow border-0 fs-5"
                                 >
-                                    {location.pathname.includes('notes') && 'Notes' || location.pathname.includes('todos') && 'Todos' || 'Home'}
+                                    {location.pathname.includes('notes') && 'Notes' || location.pathname.includes('todos') && 'Todos' || 'Notes'}
                                 </DropDown.Toggle>
                                 <DropDown.Menu>
                                     <DropDown.Item>
@@ -56,7 +69,7 @@ const MainHeader = () => {
                     </div>
                 </nav>
             </header>
-            <Outlet context={{open, setOpen}}/>
+            <Outlet context={{ open, setOpen }} />
         </>
     )
 }
