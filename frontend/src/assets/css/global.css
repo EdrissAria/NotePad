@@ -5,10 +5,11 @@
    --light: #fbfbfb;
    --darkgray: rgb(112, 112, 112);
   }
-  body {
-    margin: 0; 
-    padding: 0;
+  body:has(.light) {
     background-color: var(--light);
+  }
+  body:has(.dark) {
+    background-color: var(--dark);
   }
   @media (min-width: 991.98px) {
     main {
@@ -149,14 +150,17 @@
   .dark .new-input{
     background-color: var(--dark) !important;
   }
+  .dark .new-input{
+    color: #a7a7a7
+  }
   .dark button,
   .dark i,
   .dark .modal-title,
   .dark label{
     color: var(--darkgray);
   }
-  .dark .modal-body input[type="input"]{
-    color: var(--light)
+  .dark .modal-content input[type="input"]{
+    color: var(--light) !important;
   }
   .dark .ck{
     background-color:var(--darkgray) !important;
@@ -192,6 +196,10 @@
   }
   .dark .settings label{
     color: var(--light) !important;
+  }
+  .dark .catagory-card i, 
+  .dark .catagory-card button{
+    color: var(--light)
   }
   /*----------------------- login signup ----------------------------*/
   .dark .login-card,

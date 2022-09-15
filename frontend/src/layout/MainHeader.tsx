@@ -17,13 +17,13 @@ const MainHeader = () => {
                                 type="button"
                                 onClick={() => setOpen(!open)}
                             >
-                                {open?<i className="fas fa-close"></i>:<i className="fas fa-bars"></i>}
+                                {open ? <i className="fas fa-close"></i> : <i className="fas fa-bars"></i>}
                             </button> || location.pathname.includes('todos') && <button
                                 className="navbar-toggler me-3"
                                 type="button"
                                 onClick={() => setOpen(!open)}
                             >
-                                {open?<i className="fas fa-close"></i>:<i className="fas fa-bars"></i>}
+                                {open ? <i className="fas fa-close"></i> : <i className="fas fa-bars"></i>}
                             </button> || ''
                         }
                         <div className='d-flex align-items-center'>
@@ -48,6 +48,11 @@ const MainHeader = () => {
                                     </DropDown.Item>
                                 </DropDown.Menu>
                             </DropDown>
+                            <div>
+                                <Link to="">
+                                    <i className='fas fa-bell'></i>
+                                </Link>
+                            </div>
                             <DropDown>
                                 <DropDown.Toggle
                                     variant="default"

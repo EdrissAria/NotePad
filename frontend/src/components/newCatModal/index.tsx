@@ -21,8 +21,8 @@ function NewCatModal({show, handleClose}: paramType) {
             <Modal.Title>New note catagory</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-            <div className="modal-body d-flex align-items-center">
-            <i className="fas fa-envelope m-2 fs-4"></i>
+            <div className="modal-body d-flex align-items-end">
+            <i className="fas fa-clipboard me-2 fs-4"></i>
             <input type="text" className="new-input" placeholder="Name"/>
             </div>
             <div className="d-flex justify-content-around mt-4">
