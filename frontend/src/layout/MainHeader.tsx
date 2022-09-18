@@ -13,13 +13,13 @@ const MainHeader = () => {
                     <div className="container-fluid">
                         {
                             location.pathname.includes('notes') && <button
-                                className="navbar-toggler me-3"
+                                className="navbar-toggler me-3 border-0 btn-outline-light"
                                 type="button"
                                 onClick={() => setOpen(!open)}
                             >
                                 {open ? <i className="fas fa-close"></i> : <i className="fas fa-bars"></i>}
                             </button> || location.pathname.includes('todos') && <button
-                                className="navbar-toggler me-3"
+                                className="navbar-toggler me-3 border-0"
                                 type="button"
                                 onClick={() => setOpen(!open)}
                             >
@@ -48,9 +48,10 @@ const MainHeader = () => {
                                     </DropDown.Item>
                                 </DropDown.Menu>
                             </DropDown>
-                            <div>
-                                <Link to="">
+                            <div className='d-flex align-items-center mx-2'>
+                                <Link to="" className='bell'>
                                     <i className='fas fa-bell'></i>
+                                    <span className="badge rounded-pill bg-danger">1</span>
                                 </Link>
                             </div>
                             <DropDown>

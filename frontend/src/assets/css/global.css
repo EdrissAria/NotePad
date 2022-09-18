@@ -12,13 +12,14 @@
     background-color: var(--dark);
   }
   @media (min-width: 991.98px) {
-    main {
+    main{
       padding-left: 240px;
     }
   }
   main{
     margin-top: 58px;
   }
+  /* navbar */
   .navbar{
     border-bottom: 1px solid #eeeeee;
   }
@@ -36,16 +37,6 @@
     width: 250px;
     z-index: 1000;
   }
-  @media (max-width: 991.98px) {
-    .sidebar {
-      width: 50%;
-    }
-  }
-  @media (max-width: 425px) {
-    .sidebar {
-      width: 70%;
-    }
-  }
   .sidebar-sticky {
     position: relative;
     top: 0;
@@ -54,7 +45,6 @@
     overflow-x: hidden;
     overflow-y: auto !important; /* Scrollable contents if viewport is shorter than content. */
   }
-  
   .last-item{
     border: none !important;
   }
@@ -103,7 +93,7 @@
     background-color: var(--dark); 
   }
   .dark .sidebar .seperator{
-    background-color: var(--light);
+    background-color: var(--blue);
   }
   .dark .sidebar .active:not(.edit){
     background-color: var(--blue) !important;
@@ -122,13 +112,16 @@
   .dark .navbar a{
     color: var(--light) !important;
   }
+  .light .navbar a{
+    color: var(--dark) !important;
+  }
   .dark .navbar div{
     background-color: var(--black);
   }
   /*----------------------- main ----------------------------*/
-  .dark{
+  /* .dark{
     background-color: var(--dark);
-  }
+  } */
   .dark p{
     color: var(--light) !important;
   }
@@ -209,6 +202,17 @@
   .dark .login-card i,
   .dark .signup-card i{
     color: var(--light);
+  }
+  /*----------------------- Media query ----------------------------*/
+  @media (max-width: 991.98px) {
+    .sidebar {
+      width: 50%;
+    }
+  }
+  @media (max-width: 425px) {
+    .sidebar {
+      width: 70%;
+    }
   }
 
  
