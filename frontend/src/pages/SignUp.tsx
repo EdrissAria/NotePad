@@ -1,13 +1,13 @@
 import { Formik, Form, Field, ErrorMessage } from 'formik'
 import * as yup from 'yup'
 import ErrorText from '../components/errorMessage'
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 function SignUp() {
-    const initailValues = { firstname: '', lastname: '', password: '', confirm: '' };
+    const initailValues = { username: '', email: '', password: '', confirm: '' };
     const loginSchema = yup.object({
-        firstname: yup.string().required().min(3),
-        lastname: yup.string().required().min(3),
+        username: yup.string().required().min(3),
+        email: yup.string().required().min(3).email(),
         password: yup.string().required().min(4),
         confirm: yup.string().label('confirm password').required().oneOf([yup.ref('password'), null], 'password must match!')
     })
@@ -15,8 +15,8 @@ function SignUp() {
         console.log(values)
     }
     return (
-        <div className='container d-flex justify-content-center align-items-center mt-5'>
-            <div className='signup-card w-50 h-50 mt-5 p-3 rounded shadow-lg'>
+        <div className='container'>
+            <div className='signup-card col col-md-8 col-lg-5 col-xxl-5 mt-5 mx-auto p-3 rounded shadow-lg'>
                 <p className='fs-1 text-black-50 text-center'>Sign Up</p>
                 <Formik
                     initialValues={initailValues}
@@ -26,31 +26,31 @@ function SignUp() {
                     <Form>
                         <div className='mt-2 d-flex justify-content-start align-items-center'>
                             <i className='fas fa-user fs-4 m-3'></i>
-                            <Field type="text" name="firstname" placeholder='First name' className='form-control' />
+                            <Field type="text" name="username" placeholder='username' className='form-control' />
                         </div>
                         <div className='mx-5'>
-                            <ErrorMessage name="firstname" component={ErrorText}/>
+                            <ErrorMessage name="username" component={ErrorText} />
                         </div>
                         <div className='mt-2 d-flex justify-content-start align-items-center'>
-                            <i className='fas fa-user fs-4 m-3'></i>
-                            <Field type="text" name="lastname" placeholder='Last name' className='form-control' />
+                            <i className='fas fa-envelope fs-4 m-3'></i>
+                            <Field type="text" name="email" placeholder='E-mail' className='form-control' />
                         </div>
                         <div className='mx-5'>
-                            <ErrorMessage name="lastname" component={ErrorText}/>
+                            <ErrorMessage name="email" component={ErrorText} />
                         </div>
                         <div className='mt-2 d-flex justify-content-start align-items-center'>
                             <i className='fas fa-lock fs-4 m-3'></i>
                             <Field type="password" name="password" placeholder='password' className='form-control' />
                         </div>
                         <div className='mx-5'>
-                            <ErrorMessage name="password" component={ErrorText}/>
+                            <ErrorMessage name="password" component={ErrorText} />
                         </div>
                         <div className='mt-2 d-flex justify-content-start align-items-center'>
                             <i className='fas fa-unlock fs-4 m-3'></i>
                             <Field type="password" name="confirm" placeholder='confirm password' className='form-control' />
                         </div>
                         <div className='mx-5'>
-                            <ErrorMessage name="confirm" component={ErrorText}/>
+                            <ErrorMessage name="confirm" component={ErrorText} />
                         </div>
                         <div className="text-center mt-2">
                             <button type="submit" className='btn btn-info text-white mt-2 px-4 align-self-center'>Sign Up</button>

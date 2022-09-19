@@ -5,19 +5,20 @@
    --light: #fbfbfb;
    --darkgray: rgb(112, 112, 112);
   }
+
   body:has(.light) {
     background-color: var(--light);
   }
+
   body:has(.dark) {
     background-color: var(--dark);
   }
-  @media (min-width: 991.98px) {
-    main{
-      padding-left: 240px;
-    }
-  }
+
   main{
-    margin-top: 58px;
+    margin-top: 158px;
+  }
+  .login-card, .signup-card{
+    margin-top: 160px !important;
   }
   /* navbar */
   .navbar{
@@ -204,6 +205,11 @@
     color: var(--light);
   }
   /*----------------------- Media query ----------------------------*/
+  @media (min-width: 991.98px) {
+    main{
+      padding-left: 240px;
+    }
+  }
   @media (max-width: 991.98px) {
     .sidebar {
       width: 50%;

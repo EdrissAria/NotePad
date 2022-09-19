@@ -17,8 +17,9 @@ function Login() {
         console.log(typeof ErrorText)
     }
     return (
-        <div className='container d-flex justify-content-center align-items-center mt-5'>
-            <div className='login-card w-50 h-50 bg-white mt-5 p-3 rounded shadow-lg'>
+        <div className='container'>
+            
+            <div className='login-card col col-md-8 col-lg-5 col-xxl-5 bg-white mt-5 p-3 rounded shadow-lg mx-auto'>
                 <p className='fs-1 text-black-50 text-center'>Login</p>
                 <Formik
                     initialValues={initailValues}
