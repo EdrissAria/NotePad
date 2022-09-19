@@ -21,12 +21,11 @@ import Login from "./pages/Login"
 import SignUp from "./pages/SignUp"
 // redux 
 import {useSelector} from 'react-redux'
-import { useState } from "react"
 
 function App() {
   useSelector((state: any)=> state.theme.value)
   return (
-    <div className={`${JSON.parse(localStorage.getItem('darkMode'))?'dark':'light'}`}>
+    <div className={`${JSON.parse(localStorage.getItem('darkMode') ?? '{}')?'dark':'light'}`}>
     <Routes>
       <Route path="/" element={<MainHeader />}>
         <Route index element={<Home />} />

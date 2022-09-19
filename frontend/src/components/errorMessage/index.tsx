@@ -1,9 +1,9 @@
 import React from 'react'
-type paramType = {
+type propsType = {
     children: React.ReactNode
 }
 
-function ErrorMessage({children}: paramType) {
+function ErrorMessage({children}: propsType) {
   return (
     <div className='text-danger'>
         {children}

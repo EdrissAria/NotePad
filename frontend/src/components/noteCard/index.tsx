@@ -1,10 +1,11 @@
 import './style.css'
 import { Link } from 'react-router-dom'
 
-type paramType = {
+type propsType = {
   note: String
 }
-function NoteCard({ note }: paramType) {
+
+function NoteCard({ note }: propsType) {
   return (
     <Link to="/notes/note/23" className='text-decoration-none'>
       <div className='card border-0 border-rounded-3 shadow-sm p-3 mt-3 bg-white'>

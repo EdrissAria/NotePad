@@ -25,7 +25,7 @@ function Sidebar() {
                         <NavLink to="deletedTodos" className="list-group-item list-group-item-action py-2 ripple last-item"
                         ><i className="fas fa-trash-can fa-fw me-3"></i><span>Recently deleted</span><span className="float-end">0</span></NavLink
                         >
-                        <div className="seperator"></div>
+                        <div className="seperator bg-primary"></div>
                         <div className="catagory-header d-flex justify-content-between align-items-center my-2">
                             <h6 className="text-uppercase m-0">catagories</h6>
                             <NavLink to="editTodoCats" className="edit text-uppercase text-decoration-none">edit</NavLink>
@@ -51,7 +51,7 @@ function Sidebar() {
                         <button onClick={handleShow} className="border-0 bg-white text-primary py-2 ripple text-decoration-none text-start"
                         >New</button
                         >
-                        <div className="seperator"></div>
+                        <div className="seperator bg-primary"></div>
                         <NavLink to="/settings" className="list-group-item list-group-item-action py-2 ripple"
                         ><i className="fas fa-gear fa-fw me-3"></i><span>Settings</span></NavLink
                         >

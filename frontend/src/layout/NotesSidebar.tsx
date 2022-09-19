@@ -7,6 +7,7 @@ function Sidebar() {
     const [show, setShow] = useState(false);
     const handleShow = () => setShow(!show)
     const handleClose = () => setShow(!show)
+    
     return (
         <>
             <NewCatModal show={show} handleClose={handleClose} />

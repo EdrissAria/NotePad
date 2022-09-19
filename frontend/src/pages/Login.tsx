@@ -3,6 +3,7 @@ import * as yup from 'yup'
 import ErrorText from '../components/errorMessage'
 import {Link} from 'react-router-dom'
 import {useLocation} from 'react-router'
+import React from 'react'
 
 function Login() {
     const locate = useLocation();
@@ -13,7 +14,7 @@ function Login() {
         password: yup.string().required().min(4)
     })
     const onSubmit = (values: Object) => {
-        console.log(values)
+        console.log(typeof ErrorText)
     }
     return (
         <div className='container d-flex justify-content-center align-items-center mt-5'>
@@ -30,7 +31,7 @@ function Login() {
                             <Field type="text" name="username" placeholder='username' className='form-control' />
                         </div>
                         <div className='mx-5'>
-                            <ErrorMessage name="username" component={ErrorText}/>
+                            <ErrorMessage name="username" component={typeof ErrorText ? ErrorText : undefined} />
                         </div>
                         <div className='mt-2 d-flex justify-content-start align-items-center'>
                             <i className='fas fa-lock fs-4 m-3'></i>
