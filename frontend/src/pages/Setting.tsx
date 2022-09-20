@@ -1,7 +1,7 @@
 import { useState } from "react"
 import TitleBar from "../components/titlebar"
 import {useDispatch} from "react-redux"
-import {changeTheme} from "../slices.js/DarkMode"
+import {changeTheme} from "../slices/DarkMode"
 
 
 function Setting() {
@@ -9,7 +9,7 @@ function Setting() {
   const changeThemeColor = () => {
     theme(changeTheme()) 
   }
-  const darkTheme = JSON.parse(localStorage.getItem('darkMode')); 
+  const darkTheme = JSON.parse(localStorage.getItem('darkMode') ?? '{}'); 
 
   return (
     <div className="container" style={{marginTop: '60px'}}>

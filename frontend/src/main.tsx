@@ -7,7 +7,7 @@ import "bootstrap/dist/css/bootstrap.min.css"
 import "./assets/css/global.css"
 import { configureStore } from '@reduxjs/toolkit'
 import { Provider } from 'react-redux'
-import darkModeReducer from './slices.js/DarkMode'
+import darkModeReducer from './slices/DarkMode'
 
 const store = configureStore({
   reducer: {
