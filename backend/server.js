@@ -30,7 +30,8 @@ const noteCatagoriesRoutes = require('./routes/noteCatagories')
 const todoCatagoriesRoutes = require('./routes/todoCatagories')
 app.use('/notes', notesRoutes); 
 app.use('/todos', todosRoutes);
-app.use('/users', usersRoutes); 
+app.use('/users', usersRoutes);
+app.use('/users/login', usersRoutes) 
 app.use('/noteCatagories', noteCatagoriesRoutes); 
 app.use('/todoCatagories', todoCatagoriesRoutes); 
 

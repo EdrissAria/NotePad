@@ -9,7 +9,7 @@ const todoSchema = mongoose.Schema({
     created_at: {type: Date, default: Date.now()},
     completed_at: {type: Date},
     important: {type: Boolean, default: false},
-    remind: {type: Date},
+    reminder: {type: Date},
     remarks: {type: String},
     deleted: {type: Boolean, default: false}
 }); 

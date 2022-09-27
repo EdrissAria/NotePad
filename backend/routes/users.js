@@ -1,6 +1,7 @@
 const express = require("express"); 
 const router = express.Router();
 const userController = require("../controllers/userController");
+const bcrypt = require('bcrypt')
 
 // set up the routes 
 //
@@ -26,7 +27,10 @@ router.get('/:id', async (req, res)=>{
 // create single user
 router.post('/', async (req, res)=>{
     try{
-        const newUser = await userController.createUser(req.body);  
+        const salt = await bcrypt.genSalt(10); 
+        const hashPassword = await bcrypt.hash(req.body.password, salt)
+        const user = {username: req.body.username, email: req.body.email, password: hashPassword}
+        const newUser = await userController.createUser(user);  
         res.status(201).json({data: newUser, message: 'user created successfully!'}) 
     }catch(e){
         res.status(400).json({message: e.message})
@@ -51,6 +55,24 @@ router.patch('/:id', async (req, res)=>{
         res.status(404).json({message: e.message})
     }
 })
+
+// user login
+router.post('/login', async (req, res) => {
+    const user = await userController.login(req.body.email); 
+    if(user == null){
+        return res.status(400).send('Can not find the user'); 
+    }
+    try{
+        if(await bcrypt.compare(req.body.password, user.password)){
+            res.send('Success')
+        }else{
+            res.send('Failed')
+        }
+    }catch(e){
+        res.status(500).send('incorect username or password')
+    }
+})
+
  
 //export router
 module.exports = router; 

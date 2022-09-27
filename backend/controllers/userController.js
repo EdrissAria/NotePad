@@ -20,4 +20,8 @@ exports.updateUser = async (id, user) => {
 exports.deleteUser = async (id)=>{
     return await userModel.findByIdAndDelete(id); 
 }
+// login 
+exports.login = async (email) => {
+    return await userModel.findOne({email: email})
+}
 

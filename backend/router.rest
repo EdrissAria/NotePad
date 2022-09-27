@@ -1,6 +1,6 @@
 ###user routes 
 
-GET http://localhost:3000/todos
+GET http://localhost:3000/users
 
 ###
 
@@ -8,14 +8,24 @@ GET http://localhost:3000/todos/63078362e14ab0eea946f547
 
 ###
 
-POST http://localhost:3000/todos
+POST http://localhost:3000/users
 Content-Type: application/json
 
 {
-  "user_id": "boz",
-  "completed": false,
-  "catagory_id": "Personal",
-  "created_at": "2022-08-25T14:11:15.932Z"
+  "username": "edriss",
+  "email": "edriss@gmail.com",
+  "password": "something"
+}
+
+###
+
+POST http://localhost:3000/users/login
+Content-Type: application/json
+
+{
+  "username": "edr",
+  "email": "edriss@gail.com",
+  "password": "$2b$10$7gX3gwUXJc8FS8Uxln7Fe5OyGKBYBlZeQmTMd8b3y/9iCJJgiPZS"
 }
 
 ###
@@ -28,5 +38,5 @@ PATCH http://localhost:3000/todos/63078362e14ab0eea946f547
 Content-Type: application/json
 
 {
-    "todo": "do nothing"
+  "todo": "do nothing"
 }
