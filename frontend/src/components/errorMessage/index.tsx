@@ -6,7 +6,7 @@ type propsType = {
 function ErrorMessage({children}: propsType) {
   return (
     <div className='text-danger'>
-        {children}
+        
     </div>
   )
 }

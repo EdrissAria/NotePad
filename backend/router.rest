@@ -1,6 +1,6 @@
 ###user routes 
 
-GET http://localhost:3000/users
+GET http://localhost:3000/notes
 
 ###
 

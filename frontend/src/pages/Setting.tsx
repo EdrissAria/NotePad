@@ -1,16 +1,15 @@
-import { useState } from "react"
 import TitleBar from "../components/titlebar"
 import {useDispatch} from "react-redux"
 import {changeTheme} from "../slices/DarkMode"
-
-
+import {useDarkMode} from '../hooks/useDarkMode'
+  
 function Setting() {
   const theme = useDispatch(); 
+  const getCookie = useDarkMode('dark'); 
   const changeThemeColor = () => {
     theme(changeTheme()) 
   }
-  const darkTheme = JSON.parse(localStorage.getItem('darkMode') ?? '{}'); 
-
+  
   return (
     <div className="container" style={{marginTop: '60px'}}>
       <div className="d-flex justify-content-center">
@@ -21,7 +20,7 @@ function Setting() {
           Dark Mode
           </label>
             <div className='form-check form-switch'>
-              <input type="checkbox" id="dark-mode" onChange={changeThemeColor} checked={darkTheme} className='form-check-input m-3 fs-4' />
+              <input type="checkbox" id="dark-mode" onChange={changeThemeColor} checked={getCookie} className='form-check-input m-3 fs-4' />
             </div>
       </div>
     </div>

@@ -21,11 +21,13 @@ import Login from "./pages/Login"
 import SignUp from "./pages/SignUp"
 // redux 
 import {useSelector} from 'react-redux'
+import {useDarkMode} from './hooks/useDarkMode'
 
 function App() {
   useSelector((state: any)=> state.theme.value)
+  const getCookie = useDarkMode('dark')
   return (
-    <div className={`${JSON.parse(localStorage.getItem('darkMode') ?? '{}')?'dark':'light'}`}>
+    <div className={`${getCookie?'dark':'light'}`}>
     <Routes>
       <Route path="/" element={<MainHeader />}>
         <Route index element={<Home />} />

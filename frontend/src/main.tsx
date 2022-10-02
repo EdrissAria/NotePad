@@ -8,6 +8,9 @@ import "./assets/css/global.css"
 import { configureStore } from '@reduxjs/toolkit'
 import { Provider } from 'react-redux'
 import darkModeReducer from './slices/DarkMode'
+import { QueryClient, QueryClientProvider } from 'react-query'
+
+const queryClient = new QueryClient();
 
 const store = configureStore({
   reducer: {
@@ -17,10 +20,12 @@ const store = configureStore({
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
-    <BrowserRouter>
-      <Provider store={store}>
-        <App />
-      </Provider>
-    </BrowserRouter>
+    <QueryClientProvider client={queryClient}>
+      <BrowserRouter>
+        <Provider store={store}>
+          <App />
+        </Provider>
+      </BrowserRouter>
+    </QueryClientProvider>
   </React.StrictMode>
 )

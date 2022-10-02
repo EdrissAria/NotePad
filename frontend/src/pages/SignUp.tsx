@@ -1,6 +1,5 @@
 import { Formik, Form, Field, ErrorMessage } from 'formik'
 import * as yup from 'yup'
-import ErrorText from '../components/errorMessage'
 import { Link } from 'react-router-dom'
 
 function SignUp() {
@@ -28,29 +27,29 @@ function SignUp() {
                             <i className='fas fa-user fs-4 m-3'></i>
                             <Field type="text" name="username" placeholder='username' className='form-control' />
                         </div>
-                        <div className='mx-5'>
-                            <ErrorMessage name="username" component={ErrorText} />
+                        <div className='mx-5 text-danger text-center'>
+                            <ErrorMessage name="username"/>
                         </div>
                         <div className='mt-2 d-flex justify-content-start align-items-center'>
                             <i className='fas fa-envelope fs-4 m-3'></i>
                             <Field type="text" name="email" placeholder='E-mail' className='form-control' />
                         </div>
-                        <div className='mx-5'>
-                            <ErrorMessage name="email" component={ErrorText} />
+                        <div className='mx-5 text-danger text-center'>
+                            <ErrorMessage name="email"/>
                         </div>
                         <div className='mt-2 d-flex justify-content-start align-items-center'>
                             <i className='fas fa-lock fs-4 m-3'></i>
                             <Field type="password" name="password" placeholder='password' className='form-control' />
                         </div>
-                        <div className='mx-5'>
-                            <ErrorMessage name="password" component={ErrorText} />
+                        <div className='mx-5 text-danger text-center'>
+                            <ErrorMessage name="password" />
                         </div>
                         <div className='mt-2 d-flex justify-content-start align-items-center'>
                             <i className='fas fa-unlock fs-4 m-3'></i>
                             <Field type="password" name="confirm" placeholder='confirm password' className='form-control' />
                         </div>
-                        <div className='mx-5'>
-                            <ErrorMessage name="confirm" component={ErrorText} />
+                        <div className='mx-5 text-danger text-center'>
+                            <ErrorMessage name="confirm"/>
                         </div>
                         <div className="text-center mt-2">
                             <button type="submit" className='btn btn-info text-white mt-2 px-4 align-self-center'>Sign Up</button>
