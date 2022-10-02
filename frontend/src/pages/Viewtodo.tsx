@@ -17,7 +17,7 @@ function Viewtodo() {
         </div>
         <div className='view-todo border-rounded-3 shadow-sm p-2 pb-5 mt-3 bg-white'>
           <div className='d-flex justify-content-start align-items-center border-bottom mt-2'>
-            <input type="checkbox" className='form-check-input m-3 fs-4 rounded-4' />
+            <input type="checkbox" className='form-check-input m-3 fs-3 rounded-circle' />
             <div className='text-decoration-none d-flex align-items-center w-100'>
               <input type="text" value="something" className='w-100 border-0 px-2 py-2' style={{ outline: 'none' }} />
             </div>

@@ -219,6 +219,22 @@
     .sidebar {
       width: 70%;
     }
+    header h3{
+      font-size: 1.2rem;
+    }
+    header button.navbar-toggler{
+      margin: 0.2rem !important;
+      padding: 0.2rem 0.4rem;
+    }
+    .catagory-card{
+      padding: 0.6rem !important;
+    }
+    .catagory-card i{
+      font-size: 1rem !important;
+    }
+    .catagory-card input{
+      font-size: 0.9rem;
+    }
   }
 
  

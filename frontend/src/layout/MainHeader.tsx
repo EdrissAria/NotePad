@@ -13,7 +13,7 @@ const MainHeader = () => {
                     <div className="container-fluid">
                         {
                             location.pathname.includes('notes') && <button
-                                className="navbar-toggler me-3 border-0 btn-outline-light"
+                                className="navbar-toggler  border-0 btn-outline-light"
                                 type="button"
                                 onClick={() => setOpen(!open)}
                             >
@@ -28,7 +28,7 @@ const MainHeader = () => {
                         }
                         <div className='d-flex align-items-center'>
                             <Link className="navbar-brand" to="/">
-                                <h3 className='m-0 text-secondary'>NotePad</h3>
+                                <h3 className='m-0 text-secondary'>Note</h3>
                             </Link>
                         </div>
                         <ul className="navbar-nav ms-auto d-flex flex-row">

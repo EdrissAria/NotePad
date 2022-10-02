@@ -6,8 +6,8 @@ function CatagoryCard() {
           <input type="text" value="Personal" className="form-control" />
         </div>
         <div>
-          <button className="btn btn-success m-2">Save</button>
-          <button className="btn btn-danger">Delete</button> 
+          <i className="text-success me-4 fas fa-save fs-1"></i>
+          <i className="text-danger fas fa-trash fs-1"></i> 
         </div>
     </div>
   )
