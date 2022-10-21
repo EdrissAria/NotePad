@@ -70,7 +70,7 @@
     margin-right: 1rem;
   }
   ::-webkit-scrollbar-thumb:hover{
-    background-color: var(--dark)
+    background-color: var(--darkgray)
   }
   /* dark mode */
   .dark .sidebar{
@@ -142,7 +142,7 @@
   }
   .dark .modal-content,
   .dark .new-input{
-    background-color: var(--dark) !important;
+    background-color: var(--dark);
   }
   .dark .new-input{
     color: #a7a7a7

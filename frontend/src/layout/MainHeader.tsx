@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { Link, Outlet } from 'react-router-dom'
 import DropDown from 'react-bootstrap/Dropdown'
 import { useLocation } from 'react-router-dom'
+import logo from '../assets/images/logo.png'
 
 const MainHeader = () => {
     const location = useLocation();
@@ -26,9 +27,9 @@ const MainHeader = () => {
                                 {open ? <i className="fas fa-close"></i> : <i className="fas fa-bars"></i>}
                             </button> || ''
                         }
-                        <div className='d-flex align-items-center'>
-                            <Link className="navbar-brand" to="/">
-                                <h3 className='m-0 text-secondary'>Note</h3>
+                        <div className='d-flex align-items-center m-0'>
+                            <Link className="navbar-brand p-0" to="/">
+                                <img src={logo} alt="logo" style={{width: '50px', margin: '0'}}/>
                             </Link>
                         </div>
                         <ul className="navbar-nav ms-auto d-flex flex-row">

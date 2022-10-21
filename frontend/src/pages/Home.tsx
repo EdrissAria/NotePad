@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
-import noteImg from '../assets/images/note.jpeg'
-import todoImg from '../assets/images/todo.jpeg'
+import noteImg from '../assets/images/note.png'
+import todoImg from '../assets/images/todo.png'
 
 function Home() {
     return (

@@ -1,6 +1,7 @@
 import Modal from "react-bootstrap/Modal"
 import './style.css'
 import { useSelector } from 'react-redux'
+import {useDarkMode} from '../../hooks/useDarkMode'
 
 type propsType = {
     show: boolean,
@@ -8,14 +9,15 @@ type propsType = {
 }
 
 function NewCatModal({ show, handleClose }: propsType) {
-    useSelector((state: any) => state.theme.value)
+    useSelector((state: any)=> state.theme.value)
+    const getCookie = useDarkMode('dark')
     return (
         <Modal
             show={show}
             onHide={handleClose}
             backdrop="static"
             keyboard={false}
-            className={`${JSON.parse(localStorage.getItem('darkMode') ?? '{}') ? 'dark' : 'light'}`}
+            className={`${getCookie?'dark':'light'}`}
         >
             <Modal.Header className="modal-header border-0">
                 <Modal.Title>New note catagory</Modal.Title>
