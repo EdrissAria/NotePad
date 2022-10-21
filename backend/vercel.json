@@ -2,7 +2,7 @@
   "version": 2,
   "name": "note-pad-backend",
   "builds": [
-     { "start": "routes.ts", "use": "@vercel/node" }
+     { "src": "routes.ts", "use": "@vercel/node" }
   ],
   "routes": [
      { "src": "/(.*)", "dest": "/routes.ts" }
